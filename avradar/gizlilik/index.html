@@ -47,7 +47,7 @@
 
 <header>
   <h1>AvRadar Gizlilik Politikası</h1>
-  <p class="meta">Yürürlük tarihi: 11 Ekim 2026 · Geliştirici: Niche App Factory</p>
+  <p class="meta">Yürürlük tarihi: 14 Ekim 2026 · Geliştirici: Niche App Factory</p>
   <nav class="lang"><a href="#tr">Türkçe</a><a href="#en">English</a></nav>
 </header>
 
@@ -65,8 +65,8 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
 
 <h2>2. Kısaca</h2>
 <ul>
-  <li>Uygulamada hesap açılmaz; adınızı, e-postanızı veya telefon numaranızı istemeyiz.</li>
-  <li>Bize ait bir sunucuda kişisel veriniz saklanmaz. Av kayıtlarınız ve ayarlarınız yalnızca telefonunuzda durur.</li>
+  <li>Google ile oturum açmak isteğe bağlıdır. Oturum açmazsanız uygulama misafir olarak kullanılır ve rastgele bir anonim kimlik oluşturulur.</li>
+  <li>Hesap bilgileriniz Google Firebase Authentication'da, uygulamanın Firebase projesi altında saklanır. Av kayıtlarınız ve ayarlarınız yine yalnızca telefonunuzda durur.</li>
   <li>Konumunuz ve teşhis için gönderdiğiniz fotoğraf, hizmeti sunabilmek için aşağıda sayılan üçüncü taraf hizmetlere iletilir.</li>
   <li>Verilerinizi satmayız.</li>
 </ul>
@@ -98,6 +98,18 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
     <td>Ayar değiştirdiğinizde</td>
     <td>Tercihlerinizi hatırlamak</td>
     <td>Yalnızca telefonunuzda</td>
+  </tr>
+  <tr>
+    <td>Hesap bilgileri: e-posta adresi, ad, profil fotoğrafı bağlantısı, Google hesap kimliği ve uygulama kullanıcı kimliği; hesap oluşturma tarihi ve son oturum zamanı</td>
+    <td>Google ile oturum açtığınızda</td>
+    <td>Oturum açma ve hesabınızı tanıma</td>
+    <td>Google (Firebase Authentication)</td>
+  </tr>
+  <tr>
+    <td>Misafir kimliği: rastgele anonim kullanıcı kimliği</td>
+    <td>Misafir olarak devam ettiğinizde</td>
+    <td>Misafir oturumu</td>
+    <td>Google (Firebase Authentication)</td>
   </tr>
   <tr>
     <td>Cihaz ve uygulama doğrulama bilgisi</td>
@@ -134,7 +146,7 @@ plaka gibi kişisel bilgiler bulunmamasına dikkat edin.</p>
     <a href="https://open-meteo.com/en/terms">Şartlar ve gizlilik</a></li>
   <li><strong>Google Maps Platform (Maps SDK, Places)</strong> – harita ve yer arama. İletilen: konum, arama metni, cihaz bilgisi.
     <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a></li>
-  <li><strong>Google Firebase (AI Logic / Gemini, App Check, Analytics)</strong> – balık teşhisi, uygulama doğrulaması, kullanım istatistikleri.
+  <li><strong>Google Firebase (Authentication, AI Logic / Gemini, App Check, Analytics)</strong> – oturum açma, balık teşhisi, uygulama doğrulaması, kullanım istatistikleri.
     <a href="https://firebase.google.com/support/privacy">Firebase gizlilik bilgileri</a>,
     <a href="https://ai.google.dev/gemini-api/terms">Gemini API şartları</a></li>
   <li><strong>Google Play</strong> – uygulamanın dağıtımı ve güncellenmesi.</li>
@@ -153,6 +165,7 @@ amacıyla üçüncü taraflara satmayız.</p>
 <h2>7. Saklama ve silme</h2>
 <ul>
   <li>Telefonunuzda duran veriler (av kayıtları, ayarlar, son konum), uygulamanın verilerini temizlediğinizde ya da uygulamayı kaldırdığınızda silinir.</li>
+  <li>Hesabınızı uygulamada Ayarlar &gt; Hesap &gt; Hesap silme bölümünden ya da <a href="https://nicheappfactory.github.io/avradar/hesap-silme/">hesap silme sayfasından</a> silebilirsiniz. Hesap silindiğinde Firebase Authentication'daki hesap kaydınız silinir.</li>
   <li>Üçüncü taraflara iletilen veriler, ilgili sağlayıcının kendi saklama sürelerine tabidir.</li>
   <li>Kullanım istatistikleri kimliğinizle eşleştirilmez; bu verilerle ilgili talepleriniz için bize e-posta yazabilirsiniz.</li>
 </ul>
@@ -187,7 +200,7 @@ yayımlanır; yürürlük tarihi sayfanın başında yer alır.</p>
 <section id="en" class="card" lang="en">
 
 <h1 style="font-size:1.4rem">AvRadar Privacy Policy</h1>
-<p class="meta">Effective date: 11 October 2026 · Developer: Niche App Factory</p>
+<p class="meta">Effective date: 14 October 2026 · Developer: Niche App Factory</p>
 
 <p>This policy explains what data the <strong>AvRadar</strong> Android app
 (package name <code>com.naf.avradar</code>) processes, why, and with whom it
@@ -199,8 +212,8 @@ Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.suppor
 
 <h2>2. In short</h2>
 <ul>
-  <li>The app has no accounts; we do not ask for your name, email or phone number.</li>
-  <li>We do not store personal data on servers of our own. Your catch log and settings stay on your phone.</li>
+  <li>Signing in with Google is optional. If you do not sign in, the app is used as a guest and a random anonymous ID is created.</li>
+  <li>Your account details are stored in Google Firebase Authentication, under the app's Firebase project. Your catch log and settings still stay on your phone only.</li>
   <li>Your location and the photo you submit for identification are sent to the third-party services listed below so the app can work.</li>
   <li>We do not sell your data.</li>
 </ul>
@@ -232,6 +245,18 @@ Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.suppor
     <td>When you change a setting</td>
     <td>Remembering your preferences</td>
     <td>On your phone only</td>
+  </tr>
+  <tr>
+    <td>Account details: email address, name, profile photo link, Google account ID and app user ID; account creation date and last sign-in time</td>
+    <td>When you sign in with Google</td>
+    <td>Signing in and recognising your account</td>
+    <td>Google (Firebase Authentication)</td>
+  </tr>
+  <tr>
+    <td>Guest ID: a random anonymous user ID</td>
+    <td>When you continue as a guest</td>
+    <td>Guest session</td>
+    <td>Google (Firebase Authentication)</td>
   </tr>
   <tr>
     <td>Device and app attestation data</td>
@@ -268,7 +293,7 @@ information.</p>
     <a href="https://open-meteo.com/en/terms">Terms and privacy</a></li>
   <li><strong>Google Maps Platform (Maps SDK, Places)</strong> – map and place search. Receives: location, search text, device information.
     <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
-  <li><strong>Google Firebase (AI Logic / Gemini, App Check, Analytics)</strong> – fish identification, app attestation, usage statistics.
+  <li><strong>Google Firebase (Authentication, AI Logic / Gemini, App Check, Analytics)</strong> – sign-in, fish identification, app attestation, usage statistics.
     <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>,
     <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a></li>
   <li><strong>Google Play</strong> – distribution and updates.</li>
@@ -287,6 +312,7 @@ third parties for advertising.</p>
 <h2>7. Retention and deletion</h2>
 <ul>
   <li>Data kept on your phone (catch log, settings, last location) is deleted when you clear the app's data or uninstall the app.</li>
+  <li>You can delete your account in the app under Settings &gt; Account &gt; Delete account, or on the <a href="https://nicheappfactory.github.io/avradar/hesap-silme/">account deletion page</a>. When the account is deleted, your account record in Firebase Authentication is deleted.</li>
   <li>Data sent to third parties is subject to each provider's own retention periods.</li>
   <li>Usage statistics are not linked to your identity; contact us by email for any request about them.</li>
 </ul>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AvRadar – Hesap Silme / Account Deletion</title>
+<meta name="robots" content="index,follow">
+<style>
+  :root {
+    --bg: #f4f6f8; --card: #ffffff; --text: #16242e; --muted: #5a6b78;
+    --accent: #1d4256; --line: #dbe2e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1a21; --card: #16242e; --text: #e8eef2; --muted: #a9c2d1;
+      --accent: #a9c2d1; --line: #2a3b47;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px; line-height: 1.6;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { padding: 8px 0 16px; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; color: var(--accent); }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; color: var(--accent); }
+  p, li { margin: 0 0 10px; }
+  ul, ol { padding-left: 22px; margin: 0 0 10px; }
+  .meta { color: var(--muted); font-size: 0.92rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 20px 20px 12px; margin-top: 16px;
+  }
+  .lang { display: flex; gap: 12px; margin: 12px 0 0; font-size: 0.95rem; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 14px; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  .scroll { overflow-x: auto; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0 8px; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>AvRadar Hesap Silme</h1>
+  <p class="meta">Yürürlük tarihi: 14 Ekim 2026 · Geliştirici: Niche App Factory</p>
+  <nav class="lang"><a href="#tr">Türkçe</a><a href="#en">English</a></nav>
+</header>
+
+<!-- ============================== TÜRKÇE ============================== -->
+<section id="tr" class="card" lang="tr">
+
+<p>Bu sayfa, <strong>AvRadar</strong> Android uygulamasında (paket adı
+<code>com.naf.avradar</code>) Google ile oturum açarak oluşan hesabınızı
+ve hesabınıza bağlı verileri nasıl sildirebileceğinizi anlatır. Genel veri
+işleme bilgisi için <a href="../gizlilik/">Gizlilik Politikası</a>'na bakın.</p>
+
+<h2>1. Uygulama içinden silme</h2>
+<p>Uygulamayı açın ve şu yolu izleyin: <strong>Ayarlar &gt; Hesap &gt; Hesap
+silme &gt; Hesabı sil</strong>. Güvenlik için Google hesabınızı yeniden
+seçmeniz istenebilir. Silme tamamlanınca uygulama misafir olarak devam eder.</p>
+
+<h2>2. Uygulama yüklü değilse</h2>
+<p>Google hesabınızla aynı e-posta adresinden
+<a href="mailto:nicheappfactory.support@gmail.com?subject=AvRadar%20hesap%20silme">nicheappfactory.support@gmail.com</a>
+adresine, konusu <strong>“AvRadar hesap silme”</strong> olan bir e-posta gönderin.
+Talebiniz en geç 30 gün içinde yerine getirilir.</p>
+
+<h2>3. Silinenler</h2>
+<ul>
+  <li>Firebase Authentication'daki hesap kaydınız: e-posta adresi, ad, profil fotoğrafı bağlantısı ve kullanıcı kimlikleri.</li>
+  <li>Hesabınıza bağlı tüm veriler.</li>
+</ul>
+
+<h2>4. Silinmeyenler / ayrı yönetilenler</h2>
+<ul>
+  <li>Telefonunuzdaki av kayıtları ve ayarlar: uygulamayı kaldırarak ya da uygulamanın verilerini temizleyerek silinir.</li>
+  <li>Hesabınıza bağlı olmayan kullanım istatistikleri: Google Analytics'in kendi saklama süresine tabidir.</li>
+  <li>Teşhis için daha önce gönderilmiş fotoğraflar: Google'ın Gemini şartlarına tabidir.</li>
+</ul>
+
+<h2>5. Veri sorumlusu ve iletişim</h2>
+<p>Veri sorumlusu: <strong>Niche App Factory</strong><br>
+E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.support@gmail.com</a></p>
+
+</section>
+
+<hr>
+
+<!-- ============================== ENGLISH ============================== -->
+<section id="en" class="card" lang="en">
+
+<h1 style="font-size:1.4rem">AvRadar Account Deletion</h1>
+<p class="meta">Effective date: 14 October 2026 · Developer: Niche App Factory</p>
+
+<p>This page explains how to delete the account created when you sign in with
+Google in the <strong>AvRadar</strong> Android app (package name
+<code>com.naf.avradar</code>), and the data linked to it. For general
+information on data processing, see the <a href="../gizlilik/#en">Privacy Policy</a>.</p>
+
+<h2>1. Deleting from inside the app</h2>
+<p>Open the app and follow: <strong>Settings &gt; Account &gt; Delete account
+&gt; Delete account</strong>. For security you may be asked to pick your Google
+account again. When deletion finishes, the app continues as a guest.</p>
+
+<h2>2. If the app is not installed</h2>
+<p>Send an email from the same email address as your Google account to
+<a href="mailto:nicheappfactory.support@gmail.com?subject=AvRadar%20hesap%20silme">nicheappfactory.support@gmail.com</a>
+with the subject <strong>“AvRadar hesap silme”</strong>. Your request is
+fulfilled within 30 days at the latest.</p>
+
+<h2>3. What is deleted</h2>
+<ul>
+  <li>Your account record in Firebase Authentication: email address, name, profile photo link and user IDs.</li>
+  <li>All data linked to your account.</li>
+</ul>
+
+<h2>4. What is not deleted / is managed separately</h2>
+<ul>
+  <li>Catch log and settings on your phone: deleted by uninstalling the app or clearing the app's data.</li>
+  <li>Usage statistics not linked to your account: subject to Google Analytics' own retention period.</li>
+  <li>Photos previously sent for identification: subject to Google's Gemini terms.</li>
+</ul>
+
+<h2>5. Controller and contact</h2>
+<p>Controller: <strong>Niche App Factory</strong><br>
+Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.support@gmail.com</a></p>
+
+</section>
+
+<p class="meta" style="margin-top:24px">© 2026 Niche App Factory</p>
+
+</main>
+</body>
+</html>
