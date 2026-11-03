@@ -47,7 +47,7 @@
 
 <header>
   <h1>AvRadar Gizlilik Politikası</h1>
-  <p class="meta">Yürürlük tarihi: 14 Ekim 2026 · Geliştirici: Niche App Factory</p>
+  <p class="meta">Yürürlük tarihi: 3 Kasım 2026 · Geliştirici: Niche App Factory</p>
   <nav class="lang"><a href="#tr">Türkçe</a><a href="#en">English</a></nav>
 </header>
 
@@ -68,6 +68,7 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
   <li>Google ile oturum açmak isteğe bağlıdır. Oturum açmazsanız uygulama misafir olarak kullanılır ve rastgele bir anonim kimlik oluşturulur.</li>
   <li>Hesap bilgileriniz Google Firebase Authentication'da, uygulamanın Firebase projesi altında saklanır. Av kayıtlarınız ve ayarlarınız yine yalnızca telefonunuzda durur.</li>
   <li>Konumunuz ve teşhis için gönderdiğiniz fotoğraf, hizmeti sunabilmek için aşağıda sayılan üçüncü taraf hizmetlere iletilir.</li>
+  <li>Balık teşhisi için Google ile oturum açmanız gerekir. Teşhis fotoğrafı AvRadar sunucularında saklanmaz ve Google'ın ürünlerini geliştirmek için kullanılmaz.</li>
   <li>Verilerinizi satmayız.</li>
 </ul>
 
@@ -85,7 +86,7 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
     <td>Fotoğraf</td>
     <td>Balık teşhisi için fotoğraf çektiğinizde ya da galeriden seçtiğinizde</td>
     <td>Balığın türünü tahmin etmek</td>
-    <td>Google'ın Gemini yapay zekâ hizmetine iletilir; bizim tarafımızdan sunucuda saklanmaz</td>
+    <td>AvRadar'ın Google Cloud (Firebase) üzerindeki sunucu fonksiyonu aracılığıyla Google'ın Gemini yapay zekâ hizmetine iletilir; fotoğraf yalnızca isteği yanıtlamak için bellekte tutulur, bizim tarafımızdan saklanmaz</td>
   </tr>
   <tr>
     <td>Av kayıtları</td>
@@ -124,6 +125,18 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
     <td>Google (Firebase için Google Analytics)</td>
   </tr>
   <tr>
+    <td>Teşhis hakkı kayıtları: uygulama kullanıcı kimliği, son başarılı teşhisin zamanı, o günkü teşhis sayısı ve kayıt oluşturma zamanı (fotoğraf ya da teşhis sonucu içermez)</td>
+    <td>Girişli kullanıcı balık teşhisi istediğinde</td>
+    <td>Teşhis hakkının (haftalık sınır) uygulanması ve kötüye kullanımın önlenmesi</td>
+    <td>Google (Cloud Firestore, Avrupa – europe-west1)</td>
+  </tr>
+  <tr>
+    <td>Sunucu günlükleri: uygulama kullanıcı kimliği, hata türü ve sayaç bilgisi (fotoğraf içermez)</td>
+    <td>Teşhis sunucu fonksiyonu çağrıldığında</td>
+    <td>Hata ayıklama, maliyet ve kötüye kullanım izleme</td>
+    <td>Google (Cloud Logging); kayıtlar 30 gün saklanır, sonra otomatik silinir</td>
+  </tr>
+  <tr>
     <td>IP adresi gibi teknik bağlantı bilgileri</td>
     <td>Uygulama internete bağlandığında</td>
     <td>İsteğin iletilebilmesi (internet bağlantısının doğal sonucu)</td>
@@ -133,11 +146,14 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
 </div>
 
 <h2>4. Balık teşhisi fotoğrafları hakkında önemli not</h2>
-<p>Teşhis için gönderdiğiniz fotoğraf, Firebase AI Logic üzerinden Google'ın
-Gemini hizmetinde işlenir. Google, kendi şartları uyarınca bu içeriği
-ürünlerini ve yapay zekâ teknolojilerini geliştirmek için kullanabilir ve
-içerik, kalite amacıyla insan değerlendiriciler tarafından incelenebilir.
-Bu nedenle teşhis için gönderdiğiniz fotoğraflarda kişilerin yüzü, kimlik,
+<p>Teşhis için gönderdiğiniz fotoğraf, AvRadar'ın sunucu fonksiyonu üzerinden
+Google'ın Gemini API hizmetinin ücretli katmanında işlenir. Google'ın
+şartlarına göre ücretli katmanda gönderilen içerik, Google'ın ürünlerini
+geliştirmek için kullanılmaz
+(<a href="https://aistudio.google.com/docs/pricing">Gemini API fiyatlandırma ve veri kullanımı</a>).
+AvRadar sunucuları fotoğrafı saklamaz. Google tarafındaki saklama ve işleme,
+<a href="https://ai.google.dev/gemini-api/terms">Gemini API şartlarına</a> tabidir.
+Yine de teşhis için gönderdiğiniz fotoğraflarda kişilerin yüzü, kimlik,
 plaka gibi kişisel bilgiler bulunmamasına dikkat edin.</p>
 
 <h2>5. Verilerin paylaşıldığı üçüncü taraflar</h2>
@@ -146,7 +162,7 @@ plaka gibi kişisel bilgiler bulunmamasına dikkat edin.</p>
     <a href="https://open-meteo.com/en/terms">Şartlar ve gizlilik</a></li>
   <li><strong>Google Maps Platform (Maps SDK, Places)</strong> – harita ve yer arama. İletilen: konum, arama metni, cihaz bilgisi.
     <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a></li>
-  <li><strong>Google Firebase (Authentication, AI Logic / Gemini, App Check, Analytics)</strong> – oturum açma, balık teşhisi, uygulama doğrulaması, kullanım istatistikleri.
+  <li><strong>Google Firebase ve Google Cloud (Authentication, Cloud Functions, Cloud Firestore, Cloud Logging, App Check, Analytics) ve Gemini API</strong> – oturum açma, balık teşhisi, teşhis hakkı sayacı, uygulama doğrulaması, kullanım istatistikleri.
     <a href="https://firebase.google.com/support/privacy">Firebase gizlilik bilgileri</a>,
     <a href="https://ai.google.dev/gemini-api/terms">Gemini API şartları</a></li>
   <li><strong>Google Play</strong> – uygulamanın dağıtımı ve güncellenmesi.</li>
@@ -165,8 +181,9 @@ amacıyla üçüncü taraflara satmayız.</p>
 <h2>7. Saklama ve silme</h2>
 <ul>
   <li>Telefonunuzda duran veriler (av kayıtları, ayarlar, son konum), uygulamanın verilerini temizlediğinizde ya da uygulamayı kaldırdığınızda silinir.</li>
-  <li>Hesabınızı uygulamada Ayarlar &gt; Hesap Silme &gt; Hesabımı Sil, ardından onay penceresinde Hesabı sil yolundan ya da <a href="https://nicheappfactory.github.io/avradar/hesap-silme/">hesap silme sayfasından</a> silebilirsiniz. Hesap silindiğinde Firebase Authentication'daki hesap kaydınız silinir.</li>
+  <li>Hesabınızı uygulamada Ayarlar &gt; Hesap Silme &gt; Hesabımı Sil, ardından onay penceresinde Hesabı sil yolundan ya da <a href="https://nicheappfactory.github.io/avradar/hesap-silme/">hesap silme sayfasından</a> silebilirsiniz. Hesap silindiğinde Firebase Authentication'daki hesap kaydınız ve sunucudaki teşhis hakkı kayıtlarınız (son teşhis zamanı, günlük sayaç) silinir. Önce sunucu kaydı silinir; silinemezse hesap silinmez ve yeniden denemeniz istenir.</li>
   <li>Misafir olarak kullanırken oluşturulan anonim kimlik kişisel bilgi içermez; silinmesini e-postayla isteyebilirsiniz.</li>
+  <li>Sunucu günlükleri (Cloud Logging) 30 gün sonra otomatik silinir.</li>
   <li>Üçüncü taraflara iletilen veriler, ilgili sağlayıcının kendi saklama sürelerine tabidir.</li>
   <li>Kullanım istatistikleri kimliğinizle eşleştirilmez; bu verilerle ilgili talepleriniz için bize e-posta yazabilirsiniz.</li>
 </ul>
@@ -201,7 +218,7 @@ yayımlanır; yürürlük tarihi sayfanın başında yer alır.</p>
 <section id="en" class="card" lang="en">
 
 <h1 style="font-size:1.4rem">AvRadar Privacy Policy</h1>
-<p class="meta">Effective date: 14 October 2026 · Developer: Niche App Factory</p>
+<p class="meta">Effective date: 3 November 2026 · Developer: Niche App Factory</p>
 
 <p>This policy explains what data the <strong>AvRadar</strong> Android app
 (package name <code>com.naf.avradar</code>) processes, why, and with whom it
@@ -216,6 +233,7 @@ Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.suppor
   <li>Signing in with Google is optional. If you do not sign in, the app is used as a guest and a random anonymous ID is created.</li>
   <li>Your account details are stored in Google Firebase Authentication, under the app's Firebase project. Your catch log and settings still stay on your phone only.</li>
   <li>Your location and the photo you submit for identification are sent to the third-party services listed below so the app can work.</li>
+  <li>Fish identification requires signing in with Google. The identification photo is not stored on AvRadar servers and is not used to improve Google's products.</li>
   <li>We do not sell your data.</li>
 </ul>
 
@@ -233,7 +251,7 @@ Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.suppor
     <td>Photo</td>
     <td>When you take or choose a photo for fish identification</td>
     <td>To estimate the fish species</td>
-    <td>Sent to Google's Gemini AI service; not stored on a server by us</td>
+    <td>Sent through AvRadar's server function on Google Cloud (Firebase) to Google's Gemini AI service; the photo is held in memory only to answer the request and is not stored by us</td>
   </tr>
   <tr>
     <td>Catch log</td>
@@ -272,6 +290,18 @@ Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.suppor
     <td>Google (Google Analytics for Firebase)</td>
   </tr>
   <tr>
+    <td>Identification entitlement records: app user ID, time of the last successful identification, that day's identification count and record creation time (no photo or result)</td>
+    <td>When a signed-in user requests fish identification</td>
+    <td>Enforcing the identification allowance (weekly limit) and preventing abuse</td>
+    <td>Google (Cloud Firestore, Europe – europe-west1)</td>
+  </tr>
+  <tr>
+    <td>Server logs: app user ID, error type and counter information (no photo)</td>
+    <td>When the identification server function is called</td>
+    <td>Debugging, cost and abuse monitoring</td>
+    <td>Google (Cloud Logging); entries are kept for 30 days, then deleted automatically</td>
+  </tr>
+  <tr>
     <td>Technical connection data such as IP address</td>
     <td>Whenever the app connects to the internet</td>
     <td>Delivering the request (inherent to internet communication)</td>
@@ -281,12 +311,14 @@ Email: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.suppor
 </div>
 
 <h2>4. Important note about identification photos</h2>
-<p>Photos you submit for identification are processed by Google's Gemini
-service through Firebase AI Logic. Under Google's terms, Google may use this
-content to improve its products and machine-learning technologies, and human
-reviewers may read it for quality purposes. Please make sure the photos you
-submit do not contain faces, ID documents, licence plates or other personal
-information.</p>
+<p>Photos you submit for identification are processed through AvRadar's server
+function by the paid tier of Google's Gemini API. Under Google's terms, content
+sent on the paid tier is not used to improve Google's products
+(<a href="https://aistudio.google.com/docs/pricing">Gemini API pricing and data use</a>).
+AvRadar servers do not store the photo. Retention and processing on Google's side
+are subject to the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>.
+Still, please make sure the photos you submit do not contain faces, ID
+documents, licence plates or other personal information.</p>
 
 <h2>5. Third parties</h2>
 <ul>
@@ -294,7 +326,7 @@ information.</p>
     <a href="https://open-meteo.com/en/terms">Terms and privacy</a></li>
   <li><strong>Google Maps Platform (Maps SDK, Places)</strong> – map and place search. Receives: location, search text, device information.
     <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
-  <li><strong>Google Firebase (Authentication, AI Logic / Gemini, App Check, Analytics)</strong> – sign-in, fish identification, app attestation, usage statistics.
+  <li><strong>Google Firebase and Google Cloud (Authentication, Cloud Functions, Cloud Firestore, Cloud Logging, App Check, Analytics) and the Gemini API</strong> – sign-in, fish identification, identification allowance counter, app attestation, usage statistics.
     <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>,
     <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a></li>
   <li><strong>Google Play</strong> – distribution and updates.</li>
@@ -313,8 +345,9 @@ third parties for advertising.</p>
 <h2>7. Retention and deletion</h2>
 <ul>
   <li>Data kept on your phone (catch log, settings, last location) is deleted when you clear the app's data or uninstall the app.</li>
-  <li>You can delete your account in the app under Settings &gt; Delete account &gt; Delete my account, then confirm with Delete account in the dialog, or on the <a href="https://nicheappfactory.github.io/avradar/hesap-silme/">account deletion page</a>. When the account is deleted, your account record in Firebase Authentication is deleted.</li>
+  <li>You can delete your account in the app under Settings &gt; Delete account &gt; Delete my account, then confirm with Delete account in the dialog, or on the <a href="https://nicheappfactory.github.io/avradar/hesap-silme/">account deletion page</a>. When the account is deleted, your account record in Firebase Authentication and your identification entitlement records on the server (last identification time, daily counter) are deleted. The server record is deleted first; if it cannot be deleted, the account is not deleted and you are asked to try again.</li>
   <li>The anonymous ID created when you use the app as a guest contains no personal information; you can ask us by email to delete it.</li>
+  <li>Server logs (Cloud Logging) are deleted automatically after 30 days.</li>
   <li>Data sent to third parties is subject to each provider's own retention periods.</li>
   <li>Usage statistics are not linked to your identity; contact us by email for any request about them.</li>
 </ul>

@@ -47,7 +47,7 @@
 
 <header>
   <h1>AvRadar Hesap Silme</h1>
-  <p class="meta">Yürürlük tarihi: 14 Ekim 2026 · Geliştirici: Niche App Factory</p>
+  <p class="meta">Yürürlük tarihi: 3 Kasım 2026 · Geliştirici: Niche App Factory</p>
   <nav class="lang"><a href="#tr">Türkçe</a><a href="#en">English</a></nav>
 </header>
 
@@ -73,6 +73,7 @@ Talebiniz en geç 30 gün içinde yerine getirilir.</p>
 <h2>3. Silinenler</h2>
 <ul>
   <li>Firebase Authentication'daki hesap kaydınız: e-posta adresi, ad, profil fotoğrafı bağlantısı ve kullanıcı kimlikleri.</li>
+  <li>Teşhis hakkı kayıtlarınız: sunucuda kimliğinize bağlı son başarılı teşhis zamanı ve günlük teşhis sayacı. Uygulama içinden silerken önce bu kayıt silinir; silinemezse hesap silinmez ve yeniden denemeniz istenir.</li>
   <li>Hesabınıza bağlı tüm veriler.</li>
 </ul>
 
@@ -80,7 +81,8 @@ Talebiniz en geç 30 gün içinde yerine getirilir.</p>
 <ul>
   <li>Telefonunuzdaki av kayıtları ve ayarlar: uygulamayı kaldırarak ya da uygulamanın verilerini temizleyerek silinir.</li>
   <li>Hesabınıza bağlı olmayan kullanım istatistikleri: Google Analytics'in kendi saklama süresine tabidir.</li>
-  <li>Teşhis için daha önce gönderilmiş fotoğraflar: Google'ın Gemini şartlarına tabidir.</li>
+  <li>Sunucu günlüklerindeki (Cloud Logging) kimlik içeren hata ve kullanım kayıtları: 30 gün sonra kendiliğinden silinir.</li>
+  <li>Teşhis için daha önce gönderilmiş fotoğraflar: AvRadar sunucuları saklamaz; Google tarafında <a href="https://ai.google.dev/gemini-api/terms">Gemini API şartlarına</a> tabidir.</li>
 </ul>
 
 <h2>5. Veri sorumlusu ve iletişim</h2>
@@ -95,7 +97,7 @@ E-posta: <a href="mailto:nicheappfactory.support@gmail.com">nicheappfactory.supp
 <section id="en" class="card" lang="en">
 
 <h1 style="font-size:1.4rem">AvRadar Account Deletion</h1>
-<p class="meta">Effective date: 14 October 2026 · Developer: Niche App Factory</p>
+<p class="meta">Effective date: 3 November 2026 · Developer: Niche App Factory</p>
 
 <p>This page explains how to delete the account created when you sign in with
 Google in the <strong>AvRadar</strong> Android app (package name
@@ -116,6 +118,7 @@ fulfilled within 30 days at the latest.</p>
 <h2>3. What is deleted</h2>
 <ul>
   <li>Your account record in Firebase Authentication: email address, name, profile photo link and user IDs.</li>
+  <li>Your identification entitlement records: the time of your last successful identification and the daily counter, stored on the server and linked to your ID. When deleting from inside the app, this record is deleted first; if it cannot be deleted, the account is not deleted and you are asked to try again.</li>
   <li>All data linked to your account.</li>
 </ul>
 
@@ -123,7 +126,8 @@ fulfilled within 30 days at the latest.</p>
 <ul>
   <li>Catch log and settings on your phone: deleted by uninstalling the app or clearing the app's data.</li>
   <li>Usage statistics not linked to your account: subject to Google Analytics' own retention period.</li>
-  <li>Photos previously sent for identification: subject to Google's Gemini terms.</li>
+  <li>Entries with your ID in server logs (Cloud Logging): deleted automatically after 30 days.</li>
+  <li>Photos previously sent for identification: not stored by AvRadar servers; subject to Google's <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a> on Google's side.</li>
 </ul>
 
 <h2>5. Controller and contact</h2>
